@@ -1,0 +1,17 @@
+<% provide :title, "All users" %>
+<p>
+  <h1>All users<br>
+  (<%= @users.all.count %>)</h1>
+</p>
+<div class="column">
+  <table class="table">
+    <tbody>
+      <li class="divider" ></li>
+      <%= will_paginate %>
+        <ul class="users" >
+          <tr><%= render @users %></tr>
+        </ul>
+      <%= will_paginate %>
+    </tbody>
+  </table>
+</div>
