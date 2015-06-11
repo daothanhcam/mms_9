@@ -9,10 +9,11 @@
           <% if current_user.is_admin? %>
             <li class="dropdown" >
               <a href="#"  class="dropdown-toggle" data-toggle="dropdown" >
-                Admin Manage <b class="caret"></b>
+                <%= t("header.admin") %><b class="caret"></b>
               </a>
               <ul class="dropdown-menu" >
-                <li><%= link_to "Users Manage", admin_users_path %></li>
+                <li><%= link_to t("header.user"), admin_users_path %></li>
+                <li><%= link_to t("header.skill"), admin_skills_path %></li>
               </ul>
             </li>
           <% end %>
@@ -20,14 +21,14 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <strong><%= current_user.email %></strong><b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><%= link_to "information", user_path(current_user) %></li>
-              <li><%= link_to "Edit profile", edit_user_registration_path, class: "navbar-link" %></li>
+              <li><%= link_to t("header.information"), user_path(current_user) %></li>
+              <li><%= link_to t("header.edit_user"), edit_user_registration_path, class: "navbar-link" %></li>
               <li class="divider"></li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-link" %></li>
+              <li><%= link_to t("logout"), destroy_user_session_path, method: :delete, class: "navbar-link" %></li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Login", new_user_session_path %></li>
+          <li><%= link_to t("login"), new_user_session_path %></li>
         <% end %>
       </ul>
     </nav>
