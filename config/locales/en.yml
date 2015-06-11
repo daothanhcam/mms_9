@@ -21,3 +21,21 @@
 
 en:
   hello: "Hello world"
+  skill:
+    add: "Added new skill!"
+    new: "Submit"    
+    updated: "updated!"
+    update_title: "Edit skill"
+    index:
+      name: "Name"
+      title: "All skills"
+  show:
+    error: "The form contains"
+  header:
+    skill: "Skill Manager"
+    user: "User Manager"
+    admin: "Admin Manager"
+    information: "Information"
+    edit_user: "Edit User"
+    login: "Login"
+    logout: "Logout"
