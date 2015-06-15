@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20150622023432) do
   create_table "teams", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
-    t.integer  "user_id",     limit: 4
+    t.integer  "leader_id",   limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 20150622023432) do
     t.datetime "created_at",                                            null: false
     t.datetime "updated_at",                                            null: false
     t.string   "role",                   limit: 255, default: "member"
-    t.integer  "team_id",                limit: 4
     t.datetime "birthday"
   end
 

@@ -16,8 +16,11 @@ Rails.application.routes.draw do
     root      "static_pages#home"
     resources :users
     resources :skills
-    resources :teams
     resources :positions
     resources :activity_logs, only: [:index, :destroy]
+    resources :teams do
+      resource :team_users
+      get "members" => "team_users#show"
+    end
   end
 end

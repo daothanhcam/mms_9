@@ -23,7 +23,7 @@ en:
   hello: "Hello world"
   skill:
     add: "Added new skill!"
-    new: "Add"
+    new: "Submit"
     updated: "updated!"
     update_title: "Edit skill"
     index:
@@ -63,6 +63,13 @@ en:
     destroy: "deleted!"
     edit:
       title: "Edit Team"
+    user_not_team: "List user not team"
+    addmember: "Add"
+    user_in_team: "List user in team"
+    deletemember: "Delete"
+    member: "Member"
+    tmember: "Add member"
+    leader: "Leader"
   position:
     title:
       index: "List of positions"
@@ -127,3 +134,8 @@ en:
     update: "Update"
     destroy: "Destroy"
     confirm: "You sure?"
+  user:
+    email: "Email"
+    addskill: "Add skill"
+    edit: "Edit user"
+  fail: "Fail!"

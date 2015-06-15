@@ -3,17 +3,19 @@ class Admin::TeamsController < ApplicationController
 
   def show
     @team = Team.find params[:id]
+    @leader = User.find @team.leader_id
   end
 
   def new
     @team = Team.new
+    @leaders = User.select_leader
   end
 
   def create
     @team = Team.new team_params
     if @team.save
       flash[:notice] = t "team.created"
-      redirect_to admin_teams_path
+      redirect_to admin_team_members_path(@team)
     else
       render :new
     end
@@ -21,16 +23,20 @@ class Admin::TeamsController < ApplicationController
 
   def edit
     @team = Team.find params[:id]
+    @leaders = User.select_leader
   end
 
   def update
     @team = Team.find params[:id]
     if @team.update_attributes team_params
       flash[:success]= t "team.update.success"
-      redirect_to admin_teams_path
+      respond_to do |format|
+        format.html {redirect_to admin_team_members_path(@team)}
+        format.js
+      end
     else
-      render :edit
-      flash[:danger] = t "team.update.fail"
+      flash[:danger] = t "fail"
+      redirect_to admin_teams_path
     end
   end
 
@@ -46,6 +52,7 @@ class Admin::TeamsController < ApplicationController
 
   private
   def team_params
-    params.require(:team).permit :name, :description
+    params.require(:team)
+      .permit :name, :description, :leader_id, user_ids: []
   end
 end

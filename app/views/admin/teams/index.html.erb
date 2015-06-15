@@ -1,5 +1,6 @@
 <% provide :title, t("team.index.title") %>
 <h1><%= t "team.index.title" %></h1>
+<%= link_to " ", root_path, class: "glyphicon glyphicon-backward" %>
 <p><%= link_to t("team.create_new"), new_admin_team_path, class: "btn btn-success" %></p>
 <%= will_paginate %>
 

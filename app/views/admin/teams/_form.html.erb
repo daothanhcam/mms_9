@@ -6,6 +6,10 @@
       <%= f.text_field :name, class: "form-control" %>
       <%= f.label :description %>
       <%= f.text_field :description, class: "form-control" %></br>
+      <div class="field">
+        <%= f.label t "team.leader" %>
+        <%= f.select :leader_id, options_for_select(@leaders.pluck(:username, :id)) %>
+      </div>
       <%= f.submit t("team.new"), class: "btn btn-primary" %>
     <% end %>
   </div>

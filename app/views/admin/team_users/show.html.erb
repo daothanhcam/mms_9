@@ -1,0 +1,13 @@
+<% provide :title, t("team.tmember") %>
+<h1><%= t "team.tmember" %></h1>
+<%= link_to admin_teams_path do %>
+  <span class="glyphicon glyphicon-backward"></span>
+<% end %>
+<div class="row">
+  <div class="col-md-4 offset3">
+    <%= render "form" %>
+  </div>
+  <div class="col-md-6 offset3">
+    <%= render "form_user" %>
+  </div>
+</div>

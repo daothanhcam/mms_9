@@ -1,3 +1,5 @@
 <% provide :title, @team.name %>
-<%= @team.name %>  
+<%= @team.name %>
 <%= @team.description %>
+<%= @leader.username %>
+<%= link_to t("team.member"), admin_team_members_path(@team) %>
