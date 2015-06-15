@@ -29,6 +29,7 @@ en:
     index:
       name: "Name"
       title: "All skills"
+    destroy: "deleted!"
   show:
     error: "The form contains"
   header:
@@ -39,3 +40,20 @@ en:
     edit_user: "Edit User"
     login: "Login"
     logout: "Logout"
+    team: "Teams manager"
+  team:
+    create_new: "Create new team"
+    created: "Create success!"
+    new: "Save"
+    create:
+      title: "Create Team"
+    index:
+      title: "All Teams"
+    update:
+      success: "update success!"
+      fail: "update fail!"
+    destroy: "deleted!"
+    edit: 
+      title: "Edit Team"
+  notice:
+    yousure: "You sure?"

@@ -1,0 +1,11 @@
+<% provide :title, t("team.index.title") %>
+<h1><%= t "team.index.title" %></h1>
+<p><%= link_to t("team.create_new"), new_admin_team_path, class: "btn btn-success" %></p>
+<%= will_paginate %>
+
+<table>
+  <tr><th><%= t "team.index.name" %><th></tr>
+  <%= render partial: "team", collection: @teams %>
+</table>
+
+<%= will_paginate %>
