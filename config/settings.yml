@@ -1,1 +1,9 @@
 size_per_page: 5
+user:
+  username:
+    maximum: 20
+  email:
+    maximum: 50
+  role:
+    admin: "admin"
+    member: "admin"

@@ -1,0 +1,21 @@
+<% provide :title, t("Edit user") %>
+<h1>Edit User Profile </h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @user] do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :username %>
+      <%= @user.username %><br>
+
+      <%= f.label :email %>
+      <%= @user.email %><br>
+
+      <%= f.label :admin, "make admin" %>
+      <%= f.check_box :admin, class: "check_box" %><br>
+
+      <%= f.submit "user.save_changes", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
