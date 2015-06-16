@@ -22,7 +22,7 @@ class Admin::TeamsController < ApplicationController
   def edit
     @team = Team.find params[:id]
   end
-  
+
   def update
     @team = Team.find params[:id]
     if @team.update_attributes team_params

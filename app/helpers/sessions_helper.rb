@@ -5,8 +5,8 @@ module SessionsHelper
 
   def check_admin
     unless current_user.is_admin?
-      flash[:alert]= "user isn't admin!"
+      flash[:alert]= t "user.not_admin"
       redirect_to root_path
-    end    
+    end
   end
 end
