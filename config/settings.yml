@@ -10,3 +10,11 @@ user:
 position:
   abbreviation:
     maximum: 255
+zero: 0
+admin: admin
+one: 1
+level:
+  none: "none"
+  pro: "pro"
+  beginner: "bengin"
+  top: "top"

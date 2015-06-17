@@ -6,9 +6,9 @@ class Admin::SkillsController < ApplicationController
   def create
     @skill = Skill.new skill_params
     if @skill.save
-      flash[:success] = t("skill.add")
+      flash[:success] = t "skill.add"
       redirect_to admin_skills_path
-    else 
+    else
       render :new
     end
   end
@@ -20,11 +20,21 @@ class Admin::SkillsController < ApplicationController
   def update
     @skill = Skill.find params[:id]
     if @skill.update_attributes skill_params
-      flash[:success] = t("skill.updated")
+      flash[:success] = t "skill.updated"
       redirect_to admin_skills_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @skill = Skill.find params[:id]
+    if @skill.destroy
+      flash[:success] = t "skill.deleted"
+    else
+      flash[:danger] = t "skill.fail"
+    end
+    redirect_to admin_skills_path
   end
 
   def index

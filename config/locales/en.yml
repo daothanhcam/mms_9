@@ -23,13 +23,19 @@ en:
   hello: "Hello world"
   skill:
     add: "Added new skill!"
-    new: "Submit"
+    new: "Add"
     updated: "updated!"
     update_title: "Edit skill"
     index:
       name: "Name"
       title: "All skills"
     destroy: "deleted!"
+    deleted: "deleted!"
+    create: "Create"
+    name: "Skills"
+    level: "Level"
+    year: "Year"
+    fail: "Fail"
   show:
     error: "The form contains"
   header:
@@ -89,10 +95,17 @@ en:
     user_name: "User Name:"
     mail: "Mail:"
     type: "Type:"
-
   form:
     error_contain: "the form contains"
   button:
     edit: " Edit"
     delete: " Delete"
-
+  skilluser:
+    add: "Add skill"
+    addsuccess: "add success!"
+    skill: "Skills"
+    save: "Save"
+  user:
+    email: "Email"
+    addskill: "Add skill"
+    edit: "Edit user"

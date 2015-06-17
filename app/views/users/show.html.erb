@@ -1,0 +1,22 @@
+<% provide :title, @user.username %>
+<%= link_to t("user.edit"), user_skills_path(@user) %>
+<div class="row" >
+  <aside class="col-md-4" >
+    <section class="user_info" >
+      <h1>
+        <%= @user.username %><br>
+        <%= t "user.email" %>: <%= @user.email %><br>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.skills.any? %>
+      <h3><%= t "skilluser.skill" %>(<%= @user.skills.count %>)</h3>
+      <ol>
+        <% @user.skills.each do |skill| %>
+          <li><%= skill.name %></li>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
+</div>
