@@ -1,6 +1,6 @@
-class CreateSkills < ActiveRecord::Migration
+class CreatePositions < ActiveRecord::Migration
   def change
-    create_table :skills do |t|
+    create_table :positions do |t|
       t.string :name
       t.string :abbreviation
 

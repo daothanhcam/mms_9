@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :authenticate_user!, :check_admin
-  before_action :set_user, except: [:index]
+  before_action :set_user, except: :index
 
   def index
     @users = User.paginate page: params[:page]
