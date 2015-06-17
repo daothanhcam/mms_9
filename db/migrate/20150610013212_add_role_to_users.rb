@@ -1,5 +1,5 @@
 class AddRoleToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :role, :string, default: Settings.user.role.admin
+    add_column :users, :role, :string, default: Settings.user.role.member
   end
 end

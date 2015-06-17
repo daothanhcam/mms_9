@@ -65,6 +65,13 @@ en:
     confirm:
       delete: "Are you sure to delete user?"
     error: "error"
-    edit_user: "Edit_user"
+    edit_user: "Edit user"
     edit_link: "edit"
     delete_link: "delete"
+    make_admin: "make admin"
+    edit_profile: "Edit User Profile"
+    user_name: "User Name:"
+    mail: "Mail:"
+    type: "Type:"
+  form:
+    error_contain: "the form contains"

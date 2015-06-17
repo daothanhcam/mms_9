@@ -6,4 +6,4 @@ user:
     maximum: 50
   role:
     admin: "admin"
-    member: "admin"
+    member: "member"

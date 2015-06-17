@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :authenticate_user!, :check_admin
+  before_action :set_user, except: [:index]
 
   def index
     @users = User.paginate page: params[:page]
@@ -26,6 +27,10 @@ class Admin::UsersController < ApplicationController
   end
 
   private
+  def set_user
+    @user = User.find params[:id]
+  end
+
   def params_user
     params.require(:user)
       .permit :name, :email, :password, :password_confirmation, :role
