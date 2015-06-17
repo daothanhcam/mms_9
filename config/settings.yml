@@ -7,3 +7,6 @@ user:
   role:
     admin: "admin"
     member: "member"
+position:
+  abbreviation:
+    maximum: 255
