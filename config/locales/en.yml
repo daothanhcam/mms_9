@@ -80,6 +80,7 @@ en:
   notice:
     yousure: "You sure?"
   user:
+    all_user: "All users"
     update: "Profile updated"
     destroy: "User Deleted"
     save_changes: "Save changes"
@@ -93,19 +94,23 @@ en:
     make_admin: "make admin"
     edit_profile: "Edit User Profile"
     user_name: "User Name:"
-    mail: "Mail:"
+    email: "Email:"
+    birthday: "Birthday: "
     type: "Type:"
+    position: "Position:"
+    password: "Password:"
+    password_confirmation: "Password confirm:"
+    created: "Create user success!"
+    addskill: "Add skill"
+    edit: "Edit user"
   form:
     error_contain: "the form contains"
   button:
     edit: " Edit"
     delete: " Delete"
+    submit: "Submit"
   skilluser:
     add: "Add skill"
     addsuccess: "add success!"
     skill: "Skills"
     save: "Save"
-  user:
-    email: "Email"
-    addskill: "Add skill"
-    edit: "Edit user"

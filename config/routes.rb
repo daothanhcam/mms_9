@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
   resources :users do
+    resource :positions
     resource :skill_users
     get "skills" => "skill_users#show"
   end
