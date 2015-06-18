@@ -6,13 +6,25 @@
     </p>
 
     <p>
-      <strong><%= t "user.mail" %></strong>
+      <strong><%= t "user.email" %></strong>
       <%= @user.email %>
+    </p>
+
+    <p>
+      <strong><%= t "user.birthday" %></strong>
+      <%= @user.birthday %>
     </p>
 
     <p>
       <strong><%= t "user.type" %></strong>
       <%= @user.role %>
+    </p>
+
+    <p>
+      <strong><%= t "user.position" %></strong>
+      <% @user.positions.each do |p| %>
+        <%= p.name %>
+      <% end %>
     </p>
 
     <br><br><br>

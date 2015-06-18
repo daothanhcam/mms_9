@@ -1,7 +1,11 @@
-<% provide :title, "All users" %>
+<% provide :title, t("user.all_user") %>
 <p>
-  <h1>All users<br>
+  <h1>t "user.all_user"<br>
   (<%= @users.all.count %>)</h1>
+</p>
+<p>
+  <%= link_to t("user.create_new"), new_admin_user_path,
+    class: "btn btn-success" %>
 </p>
 <div class="column">
   <table class="table">

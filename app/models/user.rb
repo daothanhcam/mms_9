@@ -6,13 +6,16 @@ class User < ActiveRecord::Base
 
   has_many :skill_users, dependent: :destroy
   has_many :skills, through: :skill_users
-
-  accepts_nested_attributes_for :skill_users, allow_destroy: true
+  has_many :positions, through: :position_users
+  has_many :position_users, dependent: :destroy
 
   validates :email, presence: true,
     length: {maximum: Settings.user.email.maximum}
   validates :username, presence: true, uniqueness: true,
     length: {maximum: Settings.user.username.maximum}
+
+  accepts_nested_attributes_for :skill_users, allow_destroy: true
+  accepts_nested_attributes_for :position_users, allow_destroy: true
 
   def is_admin?
     role == Settings.user.role.admin
