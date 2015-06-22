@@ -1,0 +1,30 @@
+<% provide :title, t("log.title") %>
+<h1><%= t "log.title" %></h1>
+
+<%= will_paginate %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t "log.time" %></th>
+      <th><%= t "log.username" %></th>
+      <th><%= t "log.action" %></th>
+      <th><%= t "log.description" %></th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activity_logs.each do |log| %>
+      <tr>
+        <td><%= log.time %></td>
+        <td><%= log.user %></td>
+        <td><%= log.action %></td>
+        <td><%= log.description %></td>
+        <td><%= link_to t("log.delete"), [:admin, log], method: :delete, data: {confirm: t("log.confirm")} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate %>

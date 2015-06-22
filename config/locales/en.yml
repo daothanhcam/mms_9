@@ -48,6 +48,7 @@ en:
     logout: "Logout"
     team: "Teams manager"
     position: "Positions manager"
+    log: "Log Activity"
   team:
     create_new: "Create new team"
     created: "Create success!"
@@ -114,3 +115,15 @@ en:
     addsuccess: "add success!"
     skill: "Skills"
     save: "Save"
+  log:
+    title: "All Log"
+    time: "Time"
+    user: "User"
+    action: "Action"
+    description: "Description"
+    deleted: "Deleted"
+    delete: "Delete"
+    create: "Create"
+    update: "Update"
+    destroy: "Destroy"
+    confirm: "You sure?"

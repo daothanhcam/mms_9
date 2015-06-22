@@ -18,5 +18,6 @@ Rails.application.routes.draw do
     resources :skills
     resources :teams
     resources :positions
+    resources :activity_logs, only: [:index, :destroy]
   end
 end
