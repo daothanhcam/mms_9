@@ -5,4 +5,8 @@ class Position < ActiveRecord::Base
   validates :name, presence: true
   validates :abbreviation, presence: true,
     length: {maximum: Settings.position.abbreviation.maximum}
+
+  after_create :log_create
+  after_update :log_update
+  after_destroy :log_destroy
 end

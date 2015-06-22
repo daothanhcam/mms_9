@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618074542) do
+ActiveRecord::Schema.define(version: 20150622023432) do
+
+  create_table "activity_logs", force: :cascade do |t|
+    t.datetime "time"
+    t.string   "action",      limit: 255
+    t.string   "user",        limit: 255
+    t.string   "description", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "position_users", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
@@ -48,6 +57,13 @@ ActiveRecord::Schema.define(version: 20150618074542) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "team_users", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "team_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
@@ -71,6 +87,7 @@ ActiveRecord::Schema.define(version: 20150618074542) do
     t.datetime "created_at",                                            null: false
     t.datetime "updated_at",                                            null: false
     t.string   "role",                   limit: 255, default: "member"
+    t.integer  "team_id",                limit: 4
     t.datetime "birthday"
   end
 

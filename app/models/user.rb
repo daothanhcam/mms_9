@@ -20,4 +20,8 @@ class User < ActiveRecord::Base
   def is_admin?
     role == Settings.user.role.admin
   end
+
+  after_create :log_create
+  after_update :log_update
+  after_destroy :log_destroy
 end
