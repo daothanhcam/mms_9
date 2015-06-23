@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 20150622023432) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.integer  "team_id",      limit: 4
+    t.string   "name",         limit: 255
+    t.string   "abbreviation", limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "projects", ["team_id"], name: "index_projects_on_team_id", using: :btree
+
   create_table "skill_users", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "skill_id",   limit: 4
@@ -95,4 +105,5 @@ ActiveRecord::Schema.define(version: 20150622023432) do
 
   add_foreign_key "position_users", "positions"
   add_foreign_key "position_users", "users"
+  add_foreign_key "projects", "teams"
 end
