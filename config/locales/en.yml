@@ -39,6 +39,7 @@ en:
   show:
     error: "The form contains"
   header:
+    project: "Project Manager"
     skill: "Skill Manager"
     user: "User Manager"
     admin: "Admin Manager"
@@ -85,6 +86,21 @@ en:
     updated: "Position update success!"
     destroy: "Position delete success!"
     new: "Create position"
+  project:
+    title:
+      index: "List of projects"
+      edit: "Edit project"
+    create_new: "Add new project"
+    name: "Project name"
+    abbreviation: "Abbreviation"
+    created: "Project created!"
+    confirm:
+      delete: "Are you sure to delete this project?"
+    edit_title: "Edit user"
+    submit: "Submit"
+    updated: "Project update success!"
+    destroy: "Project delete success!"
+    new: "Create project"
   notice:
     yousure: "You sure?"
   user:
@@ -111,6 +127,7 @@ en:
     created: "Create user success!"
     addskill: "Add skill"
     edit: "Edit user"
+    team: "Team"
   form:
     error_contain: "the form contains"
   button:
@@ -134,8 +151,4 @@ en:
     update: "Update"
     destroy: "Destroy"
     confirm: "You sure?"
-  user:
-    email: "Email"
-    addskill: "Add skill"
-    edit: "Edit user"
   fail: "Fail!"

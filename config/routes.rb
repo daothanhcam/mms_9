@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :skills
     resources :positions
     resources :activity_logs, only: [:index, :destroy]
+    resources :projects
     resources :teams do
       resource :team_users
       get "members" => "team_users#show"

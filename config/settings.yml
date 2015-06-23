@@ -10,6 +10,9 @@ user:
 position:
   abbreviation:
     maximum: 255
+project:
+  abbreviation:
+    maximum: 255
 zero: 0
 admin: admin
 one: 1
