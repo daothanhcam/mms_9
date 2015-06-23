@@ -13,4 +13,5 @@ class Team < ActiveRecord::Base
   after_create :log_create
   after_update :log_update
   after_destroy :log_destroy
+
 end
