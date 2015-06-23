@@ -18,7 +18,10 @@ Rails.application.routes.draw do
     resources :skills
     resources :positions
     resources :activity_logs, only: [:index, :destroy]
-    resources :projects
+    resources :projects do
+      resource :project_users
+      get "members" => "project_users#show"
+    end
     resources :teams do
       resource :team_users
       get "members" => "team_users#show"

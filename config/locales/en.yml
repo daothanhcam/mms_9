@@ -92,6 +92,7 @@ en:
       edit: "Edit project"
     create_new: "Add new project"
     name: "Project name"
+    list_project: "All projects"
     abbreviation: "Abbreviation"
     created: "Project created!"
     confirm:
@@ -101,6 +102,12 @@ en:
     updated: "Project update success!"
     destroy: "Project delete success!"
     new: "Create project"
+    not_project_users: "All users don't assign to project"
+    in_project_users: "All users assigned to project"
+    deletemember: "Delete checked users"
+    assign_member: "Assign user to project"
+    title:
+      assign_member: "Assign member"
   notice:
     yousure: "You sure?"
   user:
@@ -134,6 +141,8 @@ en:
     edit: " Edit"
     delete: " Delete"
     submit: "Submit"
+    assign_member: "Assign user"
+    add_project: "Add project"
   skilluser:
     add: "Add skill"
     addsuccess: "add success!"

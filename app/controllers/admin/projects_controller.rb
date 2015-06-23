@@ -14,7 +14,7 @@ class Admin::ProjectsController < ApplicationController
     @project = Project.new project_params
     if @project.save
       flash[:success] = t "project.created"
-      redirect_to admin_projects_path
+      redirect_to admin_project_members_path(@project)
     else
       render :new
     end
@@ -23,14 +23,14 @@ class Admin::ProjectsController < ApplicationController
   def update
     if @project.update_attributes project_params
       flash[:success] = t "project.updated"
-      redirect_to admin_projects_path
+      redirect_to admin_project_members_path(@project)
     else
       render :edit
     end
   end
 
   def destroy
-    @project.delete
+    @project.destroy
     flash[:success] = t "project.destroy"
     redirect_to admin_projects_path
   end
@@ -41,6 +41,7 @@ class Admin::ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit :name, :abbreviation, :team_id
+    params.require(:project).permit :name, :abbreviation, :team_id,
+      user_ids: []
   end
 end
