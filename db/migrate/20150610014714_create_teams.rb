@@ -3,7 +3,7 @@ class CreateTeams < ActiveRecord::Migration
     create_table :teams do |t|
       t.string :name
       t.string :description
-      t.references :user
+      t.integer :leader_id
 
       t.timestamps null: false
     end
