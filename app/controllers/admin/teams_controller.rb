@@ -4,11 +4,13 @@ class Admin::TeamsController < ApplicationController
   def show
     @team = Team.find params[:id]
     @leader = User.find @team.leader_id
+    @users = @team.users
+    @projects = @team.projects
   end
 
   def new
     @team = Team.new
-    @leaders = User.select_leader
+    @leaders = User.user_not_team
   end
 
   def create
@@ -23,7 +25,8 @@ class Admin::TeamsController < ApplicationController
 
   def edit
     @team = Team.find params[:id]
-    @leaders = User.select_leader
+    @old_leader = User.where id: @team.leader_id
+    @leaders = User.user_not_team + @old_leader
   end
 
   def update

@@ -1,5 +1,28 @@
 <% provide :title, @team.name %>
-<%= @team.name %>
-<%= @team.description %>
-<%= @leader.username %>
-<%= link_to t("team.member"), admin_team_members_path(@team) %>
+<aside class="col-md-6 team-detail">
+  <br><br><h1></h1><%= t "team.show.detail" %>
+  <p><strong><%= t "team.show.name" %></strong>
+    <%= @team.name %>
+  </p>
+  <p><strong><%= t "team.show.description" %></strong>
+    <%= @team.description %>
+  </p>
+  <p><strong><%= t "team.leader" %></strong>
+    <%= @leader.username %>
+  </p>
+  <p><strong><%= t "team.member" %></strong>
+    <%= render partial: "user", collection: @users %>
+  </p>
+  <%= link_to t("team.tmember"), admin_team_team_users_path(@team),
+    class: "btn btn-primary" %><br/><br/>
+  <%= link_to t("back"), admin_teams_path, class: "glyphicon glyphicon-backward" %>
+</aside>
+<aside class="col-md-6">
+  <br/><br/><h1><%= t "team.show.projects" %></h1>
+  <table class="table">
+    <tr>
+      <th><%= t "team.show.project_name" %></th>
+    </tr>
+    <%= render partial: "project", collection: @projects %>
+  </table>
+</aside>

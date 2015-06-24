@@ -71,6 +71,10 @@ en:
     member: "Member"
     tmember: "Add member"
     leader: "Leader"
+    show:
+      detail: "About Team"
+      description: "Description"
+      projects: "List projects"
   position:
     title:
       index: "List of positions"
@@ -164,3 +168,4 @@ en:
   csv:
     down: "Download"
     file: "CSV"
+  back: "Back"
