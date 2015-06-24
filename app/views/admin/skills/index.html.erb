@@ -1,10 +1,10 @@
 <% provide :title, t("skill.index.title") %>
-<h1><%= t("skill.index.title") %></h1>
-<p><%= link_to "Create New Skill", new_admin_skill_path, class: "btn btn-success" %></p>
-<%= will_paginate %>
+<h1><%= t "skill.index.title" %></h1>
+<p><%= link_to "skill.index.title", new_admin_skill_path,
+  class: "btn btn-success" %></p>
 
 <table>
-  <tr><th><%= t("skill.index.name") %><th></tr>
+  <tr><th><%= t "skill.index.name" %><th></tr>
   <%= render partial: "skill", collection: @skills %>
 </table>
 <%= t "csv.down" %>

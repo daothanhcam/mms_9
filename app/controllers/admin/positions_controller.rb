@@ -34,7 +34,7 @@ class Admin::PositionsController < ApplicationController
   end
 
   def destroy
-    @position.delete
+    @position.destroy
     flash[:success] = t "position.destroy"
     redirect_to admin_positions_path
   end
