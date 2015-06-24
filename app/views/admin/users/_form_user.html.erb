@@ -24,7 +24,7 @@
 
       <%= f.fields_for :position_users do |p| %>
         <%= p.label t "user.position" %>
-        <%= p.collection_select :position_id, Position.all, :id, :name %>
+        <%= p.collection_select :position_id, @positions, :id, :name %>
       <% end %><br /><br />
 
       <%= f.submit t("button.submit"), class: "btn btn-primary" %>

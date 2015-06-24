@@ -1,8 +1,16 @@
-<li>
-  <%= link_to user.username, [:admin, user] %>
-    <% if current_user.is_admin? && !current_user?(user) && !user.is_admin? %>
-      |<%= link_to t("user.edit_link"), [:edit, :admin, user] %> |
-      <%= link_to t("user.delete_link"), [:admin, user], method: :delete,
-                            data: {confirm: "user.confirm.delete"} %>
-    <% end %>
-</li>
+<div class="breadcrumb row">
+  <div class="col-md-3 col-md-offset-1">
+    <%= link_to user.username, [:admin, user] %>
+  </div>
+  <div class="col-md-3"><%= user.role %></div>
+  <% if current_user.is_admin? && !current_user?(user) && !user.is_admin? %>
+    <div class="col-md-1">
+      <%= link_to t("user.edit_link"), [:edit, :admin, user],
+        class: "btn btn-success" %>
+    </div>
+    <div class="col-md-2"><%= link_to t("user.delete_link"), [:admin, user],
+      method: :delete, data: {confirm: "user.confirm.delete"},
+      class: "btn btn-success" %>
+   </div>
+  <% end %>
+</div>

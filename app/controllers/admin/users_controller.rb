@@ -3,11 +3,14 @@ class Admin::UsersController < ApplicationController
   before_action :set_user, except: [:index, :new, :create]
 
   def index
-    @users = User.paginate page: params[:page]
+    @users = User.paginate page: params[:page],
+                           per_page: Settings.size_per_page
   end
 
   def new
     @user = User.new
+    @user.position_users.build
+    @positions = Position.all
   end
 
   def create
@@ -29,6 +32,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
+    @positions = Position.all
   end
 
   def update
@@ -41,7 +45,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    @user.delete
+    @user.destroy
     flash[:success] = t "user.destroy"
     redirect_to admin_users_path
   end
