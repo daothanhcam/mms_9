@@ -26,7 +26,8 @@
         <%= p.name %>
       <% end %>
     </p>
-
+    <%= t "csv.down" %>
+    <%= link_to t("csv.file"), admin_user_path(format: "csv") %>
     <br><br><br>
   </div>
 </div>

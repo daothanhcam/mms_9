@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :positions, through: :position_users
   has_many :position_users, dependent: :destroy
   has_many :team_users, dependent: :destroy
-  has_many :team, through: :team_users
+  belongs_to :team
 
   validates :email, presence: true,
     length: {maximum: Settings.user.email.maximum}
@@ -34,4 +34,15 @@ class User < ActiveRecord::Base
   after_create :log_create
   after_update :log_update
   after_destroy :log_destroy
+
+  def to_csv
+    CSV.generate do |csv|
+      data = [self.id] + [self.username] + [self.email] + [self.encrypted_password] + [self.birthday]
+      skills = self.skills.map(&:name)
+      csv << ["id", "name", "email", "encrypted_password", "birthday"]
+      csv << data
+      csv << ["skills"]
+      csv << skills
+    end
+  end
 end

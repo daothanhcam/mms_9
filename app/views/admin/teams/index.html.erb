@@ -8,5 +8,7 @@
   <tr><th><%= t "team.index.name" %><th></tr>
   <%= render partial: "team", collection: @teams %>
 </table>
+<%= t "csv.down" %>
+<%= link_to t("csv.file"), admin_teams_path(format: "csv") %>
 
 <%= will_paginate %>

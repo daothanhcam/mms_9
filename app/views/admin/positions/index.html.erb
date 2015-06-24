@@ -5,5 +5,7 @@
 <table>
   <%= render partial: "position", collection: @positions %>
 </table>
+<%= t "csv.down" %>
+<%= link_to t("csv.file"), admin_positions_path(format: "csv") %>
 
 <%= will_paginate %>

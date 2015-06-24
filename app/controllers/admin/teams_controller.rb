@@ -42,10 +42,14 @@ class Admin::TeamsController < ApplicationController
 
   def index
     @teams = Team.paginate page: params[:page], per_page: Settings.size_per_page
+    respond_to do |format|
+      format.html
+      format.csv {send_data @teams.to_csv}
+    end
   end
 
   def destroy
-    @team = Team.find(params[:id]).delete
+    @team = Team.find(params[:id]).destroy
     flash[:success] = t "team.destroy"
     redirect_to admin_teams_path
   end
