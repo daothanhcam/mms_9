@@ -37,7 +37,8 @@ en:
     year: "Year"
     fail: "Fail"
   show:
-    error: "The form contains"
+    error: "Error"
+    form: "The form contains"
   header:
     project: "Project Manager"
     skill: "Skill Manager"

@@ -21,3 +21,5 @@ level:
   pro: "pro"
   beginner: "bengin"
   top: "top"
+log:
+  twoday: 2
