@@ -4,6 +4,10 @@ class Admin::PositionsController < ApplicationController
   def index
     @positions = Position.paginate page: params[:page],
                                    per_page: Settings.size_per_page
+    respond_to do |format|
+      format.html
+      format.csv{send_data @positions.to_csv}
+    end
   end
 
   def new

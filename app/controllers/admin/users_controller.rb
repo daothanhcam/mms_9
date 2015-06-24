@@ -21,6 +21,11 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
+    @user = User.find params[:id]
+    respond_to do |format|
+      format.html
+      format.csv {send_data @user.to_csv}
+    end
   end
 
   def edit

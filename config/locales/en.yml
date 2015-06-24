@@ -152,3 +152,6 @@ en:
     destroy: "Destroy"
     confirm: "You sure?"
   fail: "Fail!"
+  csv:
+    down: "Download"
+    file: "CSV"

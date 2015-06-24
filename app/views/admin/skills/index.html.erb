@@ -7,5 +7,7 @@
   <tr><th><%= t("skill.index.name") %><th></tr>
   <%= render partial: "skill", collection: @skills %>
 </table>
+<%= t "csv.down" %>
+<%= link_to t("csv.file"), admin_skills_path(format: "csv") %>
 
 <%= will_paginate %>
