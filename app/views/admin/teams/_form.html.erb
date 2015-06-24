@@ -8,7 +8,7 @@
       <%= f.text_field :description, class: "form-control" %></br>
       <div class="field">
         <%= f.label t "team.leader" %>
-        <%= f.select :leader_id, options_for_select(@leaders.pluck(:username, :id)) %>
+        <%= f.collection_select :leader_id, @leaders, :id, :username %>
       </div>
       <%= f.submit t("team.new"), class: "btn btn-primary" %>
     <% end %>

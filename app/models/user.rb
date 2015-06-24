@@ -29,10 +29,7 @@ class User < ActiveRecord::Base
   member = "id not in (select leader_id from teams union
     (select user_id from team_users))"
   member_not_in_project = "id not in (select user_id from project_users)"
-  leader = "id not in (select user_id from team_users)"
-
   scope :user_not_team, ->{where member}
-  scope :select_leader, ->{where leader}
   scope :no_project, ->{where member_not_in_project}
 
   def is_admin?

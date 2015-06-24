@@ -1,7 +1,12 @@
-<tr>
-  <td><%= link_to team.name, admin_team_path(team) %></td>
-  <td>|<%= link_to " ", edit_admin_team_path(team), class: "glyphicon glyphicon-edit" %></td>
-  <td>|<%= link_to " ", admin_team_path(team),
-    method: :delete, data: {confirm: t("notice.yousure")},
-    class: "glyphicon glyphicon-trash" %></td>
-</tr>
+<div class="row breadcrumb">
+  <div class="col-md-3 col-md-offset-1">
+    <%= link_to team.name, admin_team_path(team) %>
+  </div>
+  <div class="col-md-4">
+    <%= link_to " ", edit_admin_team_path(team), class: "glyphicon glyphicon-edit" %>
+  </div>
+  <div class="col-md-2">
+    <%= link_to " ", admin_team_path(team), method: :delete, data: {confirm: t("notice.yousure")},
+    class: "glyphicon glyphicon-trash" %>
+  </div>
+</div>

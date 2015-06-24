@@ -1,14 +1,12 @@
 <% provide :title, t("team.index.title") %>
-<h1><%= t "team.index.title" %></h1>
-<%= link_to " ", root_path, class: "glyphicon glyphicon-backward" %>
-<p><%= link_to t("team.create_new"), new_admin_team_path, class: "btn btn-success" %></p>
-<%= will_paginate %>
-
-<table>
-  <tr><th><%= t "team.index.name" %><th></tr>
-  <%= render partial: "team", collection: @teams %>
-</table>
 <%= t "csv.down" %>
-<%= link_to t("csv.file"), admin_teams_path(format: "csv") %>
+<%= link_to t("csv.file"), admin_teams_path(format: "csv"), class:"btn" %></br>
+<div class="col-md-12">
+  <h1><%= t "team.index.name" %></h1>
+  <%= render partial: "team", collection: @teams %>
+</div>
 
 <%= will_paginate %>
+<p><%= link_to t("team.create_new"), new_admin_team_path,
+       class: "btn btn-success" %></p>
+<%= link_to t("back"), root_path, class: "glyphicon glyphicon-backward" %>
