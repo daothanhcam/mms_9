@@ -1,6 +1,10 @@
 <% provide :title, t("team.index.title") %>
 <%= t "csv.down" %>
 <%= link_to t("csv.file"), admin_teams_path(format: "csv"), class:"btn" %></br>
+<%= search_form_for @search, url: admin_teams_path do |f| %>
+  <%= f.text_field :name_cont, class: "input-search",
+                   placeholder: "search" %>
+<% end %>
 <div class="col-md-12">
   <h1><%= t "team.index.name" %></h1>
   <%= render partial: "team", collection: @teams %>

@@ -1,6 +1,10 @@
 <% provide :title, t("skill.index.title") %>
 <h1><%= t "skill.index.title" %></h1>
-<p><%= link_to "skill.index.title", new_admin_skill_path,
+<%= search_form_for @search, url: admin_skills_path do |f| %>
+  <%= f.text_field :name_cont, class: "input-search",
+                   placeholder: "search" %>
+<% end %>
+<p><%= link_to t("skill.add"), new_admin_skill_path,
   class: "btn btn-success" %></p>
 
 <table>

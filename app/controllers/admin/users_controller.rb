@@ -3,8 +3,9 @@ class Admin::UsersController < ApplicationController
   before_action :set_user, except: [:index, :new, :create]
 
   def index
-    @users = User.paginate page: params[:page],
-                           per_page: Settings.size_per_page
+    @search = User.search params[:q]
+    @users = @search.result.paginate page: params[:page],
+                                     per_page: Settings.size_per_page
   end
 
   def new
