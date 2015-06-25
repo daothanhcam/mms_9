@@ -26,5 +26,6 @@ Rails.application.routes.draw do
       resource :team_users
       get "members" => "team_users#show"
     end
+    resources :imports
   end
 end
