@@ -15,6 +15,7 @@ gem "jquery-turbolinks"
 gem "rails_config"
 gem "whenever", require: false
 gem "ransack"
+gem "factory_girl_rails"
 # Use mysql as the database for Active Record
 gem "mysql2"
 # Use SCSS for stylesheets

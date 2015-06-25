@@ -1,6 +1,6 @@
 <% provide :title, t("team.index.title") %>
 <%= search_form_for @search, url: admin_teams_path do |f| %>
-  <%= f.text_field :name_cont, class: "input-search", placeholder: "search" %>
+  <%= f.text_field :name_cont, class: "input-search", placeholder: t("search") %>
 <% end %>
 <div class="col-md-12">
   <h1><%= t "team.index.name" %></h1>
