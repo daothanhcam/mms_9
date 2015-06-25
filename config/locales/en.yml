@@ -169,6 +169,9 @@ en:
     confirm: "You sure?"
   fail: "Fail!"
   csv:
-    down: "Download"
+    dowload: "Download csv"
     file: "CSV"
+    csv_label: "csv:"
+    title:
+      import: "Import csv"
   back: "Back"

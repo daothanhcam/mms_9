@@ -1,11 +1,14 @@
 <% provide :title, t("position.title.index") %>
 <h1><%= t "position.title.index" %></h1>
-<p><%= link_to t("position.create_new"), new_admin_position_path, class: "btn btn-success" %></p>
+<p><%= link_to t("position.create_new"), new_admin_position_path,
+  class: "btn btn-success" %></p>
 
 <table>
   <%= render partial: "position", collection: @positions %>
 </table>
 <%= t "csv.down" %>
 <%= link_to t("csv.file"), admin_positions_path(format: "csv") %>
+<%= link_to t("csv.download"), admin_positions_path(format: "csv") %>
+<%= render "shared/import_form", model: Position %>
 
 <%= will_paginate %>
