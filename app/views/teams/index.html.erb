@@ -1,0 +1,12 @@
+<% provide :title, t("team.index.title") %>
+<%= search_form_for @search, url: teams_path do |f| %>
+  <%= f.text_field :name_cont, class: "input-search",
+                   placeholder: t("search") %>
+<% end %>
+<div class="col-md-12">
+  <h1><%= t "team.index.title" %></h1>
+  <%= render partial: "team", collection: @teams %>
+</div>
+
+<%= will_paginate %>
+<%= link_to t("back"), root_path, class: "glyphicon glyphicon-backward" %>

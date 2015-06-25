@@ -1,0 +1,20 @@
+<% provide :title, @team.name %>
+<aside class="col-md-6 team-detail">
+  <br><br><h1></h1><%= t "team.show.detail" %>
+  <p><strong><%= t "team.show.name" %></strong>
+    <%= @team.name %>
+  </p>
+  <p><strong><%= t "team.show.description" %></strong>
+    <%= @team.description %>
+  </p>
+  <p><strong><%= t "team.leader" %></strong>
+    <%= link_to @leader.username, user_path(@leader) %>
+  </p>
+</aside>
+<aside class="col-md-6">
+  <p><strong><%= t "team.member" %></strong>
+    <%= render partial: "user", collection: @users %>
+  </p>
+
+  <%= will_paginate @users %>
+</aside>

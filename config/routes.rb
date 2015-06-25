@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+
   devise_for :users, path_names: {sign_in: "login", sign_up: "register"}
 
   root                "static_pages#home"
   get    "help"    => "static_pages#help"
   get    "about"   => "static_pages#about"
 
-  resources :users, only: :show
+  resources :teams, only: [:show, :index]
   resources :users do
     resource :positions
     resource :skill_users

@@ -53,6 +53,7 @@ en:
     team: "Teams manager"
     position: "Positions manager"
     log: "Log Activity"
+    all_team: "All Team"
   team:
     create_new: "Create new team"
     created: "Create success!"
@@ -71,13 +72,13 @@ en:
     addmember: "Add"
     user_in_team: "List user in team"
     deletemember: "Delete"
-    member: "Member"
+    member: "Member: "
     tmember: "Add member"
-    leader: "Leader"
+    leader: "Leader: "
     show:
       detail: "About Team"
-      description: "Description"
-      projects: "List projects"
+      description: "Description: "
+      projects: "List projects: "
   position:
     title:
       index: "List of positions"
@@ -175,3 +176,4 @@ en:
     title:
       import: "Import csv"
   back: "Back"
+  search: "Search"

@@ -8,7 +8,7 @@
     <%= @team.description %>
   </p>
   <p><strong><%= t "team.leader" %></strong>
-    <%= @leader.username %>
+    <%= link_to @leader.username, admin_user_path(@leader) %>
   </p>
   <p><strong><%= t "team.member" %></strong>
     <%= render partial: "user", collection: @users %>
