@@ -1,0 +1,12 @@
+<% provide :title, @project.name %>
+  <p><strong><%= t "project.name" %></strong>
+    <%= @project.name %>
+  </p>
+  <p><strong><%= t "project.abbreviation" %></strong>
+    <%= @project.abbreviation %>
+  </p>
+  <p><strong><%= t "project.member" %></strong>
+    <%= render partial: "user", collection: @users %>
+  </p>
+  <%= link_to t("project.member_manager"),
+    admin_project_members_path(@project), class: "btn btn-primary" %>

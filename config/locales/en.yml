@@ -95,13 +95,14 @@ en:
     destroy: "Position delete success!"
     new: "Create position"
   project:
+    member_manager: "Manager member"
     title:
       index: "List of projects"
-      edit: "Edit project"
     create_new: "Add new project"
-    name: "Project name"
+    edit_project: "Edit project"
+    name: "Project name:"
     list_project: "All projects"
-    abbreviation: "Abbreviation"
+    abbreviation: "Abbreviation:"
     created: "Project created!"
     confirm:
       delete: "Are you sure to delete this project?"
@@ -109,10 +110,11 @@ en:
     submit: "Submit"
     updated: "Project update success!"
     destroy: "Project delete success!"
+    destroy_fail: "Project delete fail!"
     new: "Create project"
     not_project_users: "All users don't assign to project"
     in_project_users: "All users assigned to project"
-    deletemember: "Delete checked users"
+    deletemember: "Delete uncheck users"
     assign_member: "Assign user to project"
     title:
       assign_member: "Assign member"
@@ -149,8 +151,10 @@ en:
     edit: " Edit"
     delete: " Delete"
     submit: "Submit"
-    assign_member: "Assign user"
+    assign_member: "Assign checked users"
     add_project: "Add project"
+    back: "Back"
+    done: "Done"
   skilluser:
     add: "Add skill"
     addsuccess: "add success!"

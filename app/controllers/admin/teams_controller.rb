@@ -17,7 +17,7 @@ class Admin::TeamsController < ApplicationController
     @team = Team.new team_params
     if @team.save
       flash[:notice] = t "team.created"
-      redirect_to admin_team_members_path(@team)
+      redirect_to admin_team_members_path @team
     else
       render :new
     end
@@ -32,9 +32,9 @@ class Admin::TeamsController < ApplicationController
   def update
     @team = Team.find params[:id]
     if @team.update_attributes team_params
-      flash[:success]= t "team.update.success"
+      flash[:success] = t "team.update.success"
       respond_to do |format|
-        format.html {redirect_to admin_team_members_path(@team)}
+        format.html {redirect_to admin_team_path @team}
         format.js
       end
     else
