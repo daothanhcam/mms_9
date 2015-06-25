@@ -44,7 +44,9 @@ class Admin::TeamsController < ApplicationController
   end
 
   def index
-    @teams = Team.paginate page: params[:page], per_page: Settings.size_per_page
+    @search = Team.search params[:q]
+    @teams = @search.result.paginate page: params[:page],
+                                     per_page: Settings.size_per_page
     respond_to do |format|
       format.html
       format.csv {send_data @teams.to_csv}

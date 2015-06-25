@@ -6,14 +6,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  belongs_to :team
-
   has_many :skill_users, dependent: :destroy
   has_many :skills, through: :skill_users
   has_many :positions, through: :position_users
   has_many :position_users, dependent: :destroy
   has_many :team_users, dependent: :destroy
-  has_many :team, through: :team_users
+  has_many :teams, through: :team_users
   has_many :projects, through: :project_users
   has_many :project_users, dependent: :destroy
 
@@ -26,8 +24,8 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :skill_users, allow_destroy: true
   accepts_nested_attributes_for :position_users, allow_destroy: true
 
-  member = "id not in (select leader_id from teams union
-    (select user_id from team_users))"
+  member = "id not in (select user_id from team_users union
+            (select leader_id from teams))"
   member_not_in_project = "id not in (select user_id from project_users)"
   scope :user_not_team, ->{where member}
   scope :no_project, ->{where member_not_in_project}

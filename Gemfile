@@ -14,6 +14,7 @@ gem "bootstrap-will_paginate", "0.0.10"
 gem "jquery-turbolinks"
 gem "rails_config"
 gem "whenever", require: false
+gem "ransack"
 # Use mysql as the database for Active Record
 gem "mysql2"
 # Use SCSS for stylesheets

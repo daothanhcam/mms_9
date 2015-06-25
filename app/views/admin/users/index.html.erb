@@ -3,6 +3,10 @@
   <h1><%= t "user.all_user" %>
   (<%= @users.count %>)</h1>
 </p>
+<%= search_form_for @search, url: admin_users_path do |f| %>
+  <%= f.text_field :username_cont, class: "input-search",
+                   placeholder: "search" %>
+<% end %>
 <p>
   <%= link_to t("user.create_new"), new_admin_user_path,
     class: "btn btn-success" %>
