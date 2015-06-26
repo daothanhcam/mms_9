@@ -42,7 +42,7 @@ class Admin::SkillsController < ApplicationController
   def index
     @search = Skill.search params[:q]
     @skills = @search.result.paginate page: params[:page],
-                                     per_page: Settings.size_per_page
+                                      per_page: Settings.size_per_page
     respond_to do |format|
       format.html
       format.csv {send_data @skills.to_csv}

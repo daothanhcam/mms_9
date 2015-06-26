@@ -39,7 +39,7 @@ class Admin::UsersController < ApplicationController
   def update
     if @user.update_attributes user_params
       flash[:success] = t "user.update"
-      redirect_to admin_user_path(@user)
+      redirect_to admin_user_path @user
     else
       render :edit
     end
