@@ -1,5 +1,5 @@
 class Admin::TeamUsersController < ApplicationController
-  before_action :authenticate_user!, :check_admin
+  before_action :check_admin
 
   def show
     @team = Team.find params[:team_id]

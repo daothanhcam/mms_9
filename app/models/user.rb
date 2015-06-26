@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
   has_one :leader, foreign_key: "leader_id"
   has_many :skill_users, dependent: :destroy
   has_many :skills, through: :skill_users

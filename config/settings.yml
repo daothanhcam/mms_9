@@ -13,9 +13,9 @@ position:
 project:
   abbreviation:
     maximum: 255
-zero: 0
+zero: "0"
 admin: admin
-one: 1
+one: "1"
 level:
   none: "none"
   pro: "pro"

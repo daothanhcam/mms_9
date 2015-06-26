@@ -1,5 +1,5 @@
 class Admin::ProjectUsersController < ApplicationController
-  before_action :authenticate_user!, :check_admin
+  before_action :check_admin
 
   def show
     @project = Project.find params[:project_id]

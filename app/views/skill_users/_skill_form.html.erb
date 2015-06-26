@@ -10,6 +10,7 @@
             <th><%= b.text %></th>
             <th class="selection_checkbox"><%= b.check_box %></th>
           <% end %>
+          <%= hidden_field_tag :flag, Settings.zero %>
         </tr>
       <% end %>
     </table>

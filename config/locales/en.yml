@@ -121,6 +121,7 @@ en:
   notice:
     yousure: "You sure?"
   user:
+    info: "User information"
     all_user: "All users"
     update: "Profile updated"
     destroy: "User Deleted"

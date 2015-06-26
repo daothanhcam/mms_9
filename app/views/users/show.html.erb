@@ -1,21 +1,20 @@
 <% provide :title, @user.username %>
-<% if current_user? @user %>
-  <%= link_to t("user.edit"), user_skills_path(@user) %>
-<% end %>
-<div class="row" >
-  <aside class="col-md-4" >
-    <section class="user_info" >
+<h1 class="user-info"><%= t "user.info" %></h1>
+<div class="row">
+  <div class="col-md-4">
+    <aside class="user_info">
       <p>
         <strong><%= t "user.user_name" %></strong>
         <%= @user.username %>
       </p>
 
-      <strong>
-        <%= t "user.email" %>: <%= @user.email %><br>
-      </strong>
+      <p>
+        <strong><%= t "user.email" %></strong>
+        <%= @user.email %>
+      </p>
 
       <p>
-      <strong><%= t "user.birthday" %></strong>
+        <strong><%= t "user.birthday" %></strong>
         <%= @user.birthday %>
       </p>
 
@@ -31,15 +30,28 @@
         <% end %>
       </p>
     </section>
-  </aside>
+  </div>
   <div class="col-md-8">
     <% if @user.skills.any? %>
-      <h3><%= t "skilluser.skill" %>(<%= @user.skills.count %>)</h3>
-      <ol>
-        <% @user.skills.each do |skill| %>
-          <li><%= skill.name %></li>
+      <h3><%= t "skilluser.skill" %>(<%= @user.skills.count %>)
+        <% if current_user? @user %>
+          <%= link_to " ", user_skills_path(@user), class: "glyphicon glyphicon-plus" %>
         <% end %>
-      </ol>
+      </h3>
+      <table class="table">
+        <tr>
+          <th><%= t "skill.name" %></th>
+          <th><%= t "skill.level" %></th>
+          <th><%= t "skill.year" %></th>
+        </tr>
+        <% @user.skill_users.each do |skill_u| %>
+          <tr>
+            <td><%= skill_u.skill.name %></td>
+            <td><%= skill_u.level %></td>
+            <td><%= skill_u.year %></td>
+          </tr>
+        <% end %>
+      </table>
     <% end %>
   </div>
 </div>

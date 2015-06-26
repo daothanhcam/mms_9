@@ -13,7 +13,6 @@
 </table>
 <%= t "csv.dowload" %>
 <%= link_to t("csv.file"), admin_skills_path(format: "csv") %>
-<%= link_to t("csv.dowload"), admin_skills_path(format: "csv") %>
 <%= render "shared/import_form", model: Skill %>
 
 <%= will_paginate %>
