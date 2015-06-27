@@ -1,5 +1,16 @@
 class Admin::SkillsController < ApplicationController
-  before_action :authenticate_user!, :check_admin
+  before_action :check_admin
+  before_action :set_skill, except: [:new, :create, :index]
+
+  def index
+    @search = Skill.search params[:q]
+    @skills = @search.result.paginate page: params[:page],
+                                      per_page: Settings.size_per_page
+    respond_to do |format|
+      format.html
+      format.csv {send_data @skills.to_csv}
+    end
+  end
 
   def new
     @skill = Skill.new
@@ -16,11 +27,9 @@ class Admin::SkillsController < ApplicationController
   end
 
   def edit
-    @skill = Skill.find params[:id]
   end
 
   def update
-    @skill = Skill.find params[:id]
     if @skill.update_attributes skill_params
       flash[:success] = t "skill.updated"
       redirect_to admin_skills_path
@@ -30,7 +39,6 @@ class Admin::SkillsController < ApplicationController
   end
 
   def destroy
-    @skill = Skill.find params[:id]
     if @skill.destroy
       flash[:success] = t "skill.deleted"
     else
@@ -39,18 +47,12 @@ class Admin::SkillsController < ApplicationController
     redirect_to admin_skills_path
   end
 
-  def index
-    @search = Skill.search params[:q]
-    @skills = @search.result.paginate page: params[:page],
-                                      per_page: Settings.size_per_page
-    respond_to do |format|
-      format.html
-      format.csv {send_data @skills.to_csv}
-    end
-  end
-
   private
   def skill_params
     params.require(:skill).permit :name
+  end
+
+  def set_skill
+    @skill = Skill.find params[:id]
   end
 end

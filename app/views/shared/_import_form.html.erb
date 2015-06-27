@@ -1,7 +1,7 @@
 <h3><%= t "cvs.title.import" %></h3>
 <%= form_tag admin_imports_path, method: :post, multipart: true do %>
   <div>
-    <%= label_tag :file, "cvs.cvs_label" %>
+    <%= label_tag :file, t("cvs.cvs_label") %>
     <%= file_field_tag :file %>
     <%= hidden_field_tag :model, model %>
     <%= submit_tag t "button.submit" %>

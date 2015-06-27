@@ -5,7 +5,7 @@ class Team < ActiveRecord::Base
   has_many :team_users, dependent: :destroy
   has_many :users, through: :team_users
   has_many :projects, dependent: :destroy
-  belongs_to :leader, class_name: "User"
+  belongs_to :leader, class_name: "User", dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, uniqueness: true

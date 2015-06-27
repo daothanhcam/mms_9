@@ -12,6 +12,7 @@
           <td><%= builder.object.skill.try(:name) %></td>
           <td><%= builder.select :level, Settings.level %></td>
           <td><%= builder.text_field :year %></td>
+          <%= hidden_field_tag :flag, Settings.one %>
         </tr>
       <% end %>
     </table>

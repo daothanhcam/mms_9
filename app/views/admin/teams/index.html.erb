@@ -8,7 +8,6 @@
 </div>
 <%= t "csv.down" %>
 <%= link_to t("csv.file"), admin_teams_path(format: "csv"), class:"btn" %></br>
-<%= link_to t("csv.download"), admin_positions_path(format: "csv") %>
 <%= render "shared/import_form", model: Team %>
 <%= will_paginate %>
 <p><%= link_to t("team.create_new"), new_admin_team_path,

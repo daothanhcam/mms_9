@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-
   def show
     @user = User.find params[:id]
   end
@@ -8,9 +6,16 @@ class UsersController < ApplicationController
   def update
     @user = User.find params[:id]
     if @user.update_attributes user_params
-      respond_to do |format|
-        format.html {redirect_to user_skills_path @user}
-        format.js
+      if Settings.one == params[:flag]
+        respond_to do |format|
+          format.html {redirect_to @user}
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html {redirect_to user_skills_path(@user)}
+          format.js
+        end
       end
     end
   end
